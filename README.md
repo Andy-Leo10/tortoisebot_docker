@@ -9,6 +9,12 @@
     - [TASK #2](#task-2)
     - [TASK #3](#task-3)
     - [TASK #4](#task-4)
+- [FOR HELP](#for-help)
+  - [build](#build)
+  - [run](#run)
+  - [new shell](#new-shell)
+  - [Previous step for visualization](#previous-step-for-visualization)
+  - [Previous step for Docker](#previous-step-for-docker)
 
 ## Simulation Environment
 ### ROS1
@@ -68,3 +74,41 @@ verify with `docker ps` and mapping:
     docker ps
 verify with `docker ps` and mapping:
 - [ ] map the environment
+
+--------------------------------------------------
+
+# FOR HELP
+
+## build
+
+    sudo docker build -f tortoisebot-ros1-IMAGE -t tortoisebot-ros1-IMAGE .
+
+## run
+
+    docker run --rm -it -p 11311:11311 -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix tortoisebot-ros1-gazebo:IMAGE bash
+
+## new shell
+
+    sudo docker exec -it NAME /bin/bash
+
+## Previous step for visualization
+**check display available**
+
+    ls -la /tmp/.X11-unix/
+    echo $DISPLAY
+
+**remove restrictions to X-server**
+
+    xhost +local:root
+
+## Previous step for Docker 
+**installation**
+    
+    sudo apt-get update
+    sudo apt-get install docker.io docker-compose -y
+    sudo service docker start
+
+**add user to docker-group**
+    
+    sudo usermod -aG docker $USER
+    newgrp docker

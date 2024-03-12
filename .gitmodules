@@ -1,0 +1,6 @@
+[submodule "tortoisebot_ros1_docker"]
+	path = tortoisebot_ros1_docker
+	url = https://github.com/Andy-Leo10/tortoisebot_ros1_docker.git
+[submodule "tortoisebot_ros2_docker"]
+	path = tortoisebot_ros2_docker
+	url = https://github.com/Andy-Leo10/tortoisebot_ros2_docker.git

@@ -10,6 +10,7 @@
     - [TASK #3](#task-3)
     - [TASK #4](#task-4)
 - [FOR HELP](#for-help)
+  - [compose](#compose)
   - [build](#build)
   - [run](#run)
   - [new shell](#new-shell)
@@ -79,13 +80,17 @@ verify with `docker ps` and mapping:
 
 # FOR HELP
 
+## compose
+
+    docker-compose -f docker-compose-sim1.yml up --build
+
 ## build
 
     sudo docker build -f tortoisebot-ros1-IMAGE -t tortoisebot-ros1-IMAGE .
 
 ## run
 
-    docker run --rm -it -p 11311:11311 -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix tortoisebot-ros1-gazebo:IMAGE bash
+    docker run --rm -it -p 11311:11311 -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix tortoisebot-ros1-gazebo:latest bash
 
 ## new shell
 

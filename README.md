@@ -84,6 +84,9 @@ verify with `docker ps` and mapping:
 
     docker-compose -f docker-compose-sim1.yml up --build
 
+execute a bash of the service
+
+    docker exec -it tortoisebot_ros1_docker_NAME_server_1 /bin/bash
 ## build
 
     sudo docker build -f tortoisebot-ros1-IMAGE -t tortoisebot-ros1-IMAGE .

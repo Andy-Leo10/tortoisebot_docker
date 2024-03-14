@@ -1,10 +1,10 @@
 # tortoisebot_docker
 
 - [tortoisebot\_docker](#tortoisebot_docker)
-  - [Simulation Environment](#simulation-environment)
-    - [ROS1](#ros1)
-    - [ROS2](#ros2)
-  - [TASKs](#tasks)
+  - [Simulation Environment (not necessary because is docker's homework)](#simulation-environment-not-necessary-because-is-dockers-homework)
+    - [ROS1: thing to do](#ros1-thing-to-do)
+    - [ROS2: thing to do](#ros2-thing-to-do)
+  - [DOCKER TASKs](#docker-tasks)
     - [TASK #1](#task-1)
     - [TASK #2](#task-2)
     - [TASK #3](#task-3)
@@ -14,11 +14,12 @@
   - [build](#build)
   - [run](#run)
   - [new shell](#new-shell)
+  - [clean](#clean)
   - [Previous step for visualization](#previous-step-for-visualization)
   - [Previous step for Docker](#previous-step-for-docker)
 
-## Simulation Environment
-### ROS1
+## Simulation Environment (not necessary because is docker's homework)
+### ROS1: thing to do
 simulation
 
     source ~/simulation_ws/devel/setup.bash
@@ -39,7 +40,7 @@ action server
     source ~/simulation_ws/devel/setup.bash
     rosrun course_web_dev_ros tortoisebot_action_server.py
 
-### ROS2
+### ROS2: thing to do
 simulation
 
     source ~/ros2_ws/install/setup.bash
@@ -51,28 +52,28 @@ mapping
     ros2 launch tortoisebot_slam cartographer.launch.py use_sim_time:=True
 
 --------------------------------------------------
-## TASKs
+## DOCKER TASKs
 ### TASK #1
     cd ~/simulation_ws/src/tortoisebot_ros1_docker
-    docker-compose up
+    docker-compose -f docker-compose-sim1.yml up --build
 verify with `docker ps` and web app:
-- [ ] command the robot with web app
+- [x] command the robot with web app
 
 ### TASK #2
     cd ~/ros2_ws/src/tortoisebot_ros2_docker
-    docker-compose up
+    docker-compose -f docker-compose-sim2.yml up --build
 verify with `docker ps` and mapping:
-- [ ] map the environment
+- [x] map the environment
 
 ### TASK #3
-    docker-compose up
-    docker ps
+    cd ~/simulation_ws/src/tortoisebot_ros1_docker
+    docker-compose -f docker-compose-real1.yml up 
 verify with `docker ps` and mapping:
 - [ ] map the environment
 
 ### TASK #4
-    docker-compose up
-    docker ps
+    cd ~/ros2_ws/src/tortoisebot_ros2_docker
+    docker-compose -f docker-compose-real2.yml up 
 verify with `docker ps` and mapping:
 - [ ] map the environment
 
@@ -98,6 +99,11 @@ execute a bash of the service
 ## new shell
 
     sudo docker exec -it NAME /bin/bash
+
+## clean
+    docker kill $(docker ps -aq) &> /dev/null;
+    docker container prune -f
+    docker rmi $(docker images -q) -f
 
 ## Previous step for visualization
 **check display available**

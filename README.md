@@ -66,15 +66,24 @@ verify with `docker ps` and mapping:
 - [x] map the environment
 
 ### TASK #3
-    cd ~/simulation_ws/src/tortoisebot_ros1_docker
+    cd ~/path/inside/RPi
     docker-compose -f docker-compose-real1.yml up 
 verify with `docker ps` and mapping:
 - [ ] map the environment
 
 ### TASK #4
-    cd ~/ros2_ws/src/tortoisebot_ros2_docker
+    cd ~/path/inside/RPi
     docker-compose -f docker-compose-real2.yml up 
 verify with `docker ps` and mapping:
+
+In the remote PC use:
+- Sourced ROS Galactic and INSTALL
+- Configured RMW_IMPLEMENTATION to rmw_cyclonedds_cpp 
+- Configured ROS_DOMAIN_ID to 30 
+- Unset env_var: CYCLONEDDS_URI
+
+    ros2 launch tortoisebot_description rviz.launch.py 
+    ros2 run teleop_twist_keyboard teleop_twist_keyboard
 - [x] map the environment
 
 --------------------------------------------------

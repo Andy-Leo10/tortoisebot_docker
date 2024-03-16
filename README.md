@@ -75,7 +75,7 @@ verify with `docker ps` and mapping:
     cd ~/ros2_ws/src/tortoisebot_ros2_docker
     docker-compose -f docker-compose-real2.yml up 
 verify with `docker ps` and mapping:
-- [ ] map the environment
+- [x] map the environment
 
 --------------------------------------------------
 

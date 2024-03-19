@@ -93,6 +93,7 @@ In the remote PC use:
 ## compose
 
     docker-compose -f docker-compose-sim1.yml up --build
+    docker-compose -f docker-compose-real1.yml up --build | tee build.log
 
 execute a bash of the service
 

@@ -17,6 +17,7 @@
   - [clean](#clean)
   - [Previous step for visualization](#previous-step-for-visualization)
   - [Previous step for Docker](#previous-step-for-docker)
+  - [Steps for moving files across systems](#steps-for-moving-files-across-systems)
 
 ## Simulation Environment (not necessary because is docker's homework)
 ### ROS1: thing to do
@@ -136,3 +137,12 @@ execute a bash of the service
     
     sudo usermod -aG docker $USER
     newgrp docker
+
+## Steps for moving files across systems 
+for copying a file from your local machine to a remote machine
+    
+    scp /path/to/local/file username@remote:/path/to/remote/directory
+
+for copying a file from a remote machine to your local machine
+
+    scp username@remote:/path/to/remote/file /path/to/local/directory
